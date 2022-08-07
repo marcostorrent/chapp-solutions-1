@@ -9,4 +9,10 @@ class Reservation extends Model
 {
     use HasFactory;
     public $table = "reservation";
+
+    public function room()
+    {
+        return $this->belongsTo(Room::class);
+    }
+
 }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Reservation;
+use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -17,8 +18,8 @@ class ReservationSeeder extends Seeder
     public function run()
     {
         Reservation::create([
-            'date_in' => '2022-08-07',
-            'date_out' => '2022-08-17',
+            'date_in' => Carbon::parse('2022-07-02'),
+            'date_out' =>  Carbon::parse('2022-07-04'),
             'room_id'  => 1,
             'guest_num' => 1,
             'name' => 'Marcos Torrent',
@@ -28,8 +29,8 @@ class ReservationSeeder extends Seeder
             'uuid' => Str::uuid(36)
         ]);
         Reservation::create([
-            'date_in' => '2022-07-07',
-            'date_out' => '2022-07-09',
+            'date_in' =>  Carbon::parse('2022-08-06'),
+            'date_out' =>  Carbon::parse('2022-08-16'),            
             'room_id'  => 25,
             'guest_num' => 3,
             'name' => 'Marcos Torrent 2',

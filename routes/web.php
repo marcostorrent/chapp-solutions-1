@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ReservationController::class, 'index'])->name('home');
+
+
+
+Route::get('/reservas/crear', [ReservationController::class, 'new']);
+
+Route::post('/reservas/crear/paso2', [ReservationController::class, 'newStep2']);
+
+Route::post('/reservas/crear/paso3', [ReservationController::class, 'newStep3']);
+
+Route::post('/reservas/crear/paso4', [ReservationController::class, 'newStep4']);
+

@@ -9,4 +9,9 @@ class RoomType extends Model
 {
     use HasFactory;
     public $table = "room_type";
+
+    public function rooms()
+    {
+        return $this->hasMany(Room::class);
+    }
 }
